@@ -29,6 +29,7 @@ function loadExample() {
 function sendRpcRequest() {
     const method = document.getElementById('method').value;
     const params = document.getElementById('params').value;
+    const serverAddress = document.getElementById('serverAddress').value;
     const rpcRequest = {
         jsonrpc: "2.0",
         method: method,
@@ -36,7 +37,7 @@ function sendRpcRequest() {
         id: 1
     };
 
-    fetch('http://localhost:3000/jsonrpc', {
+    fetch(serverAddress, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -57,3 +58,4 @@ function sendRpcRequest() {
 }
 
 window.onload = loadExamples;
+
