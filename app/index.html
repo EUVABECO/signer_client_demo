@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-RPC Interface</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <style>
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 class="title">Examples</h2>
+        <div class="field">
+            <label class="label">Select Example</label>
+            <div class="control">
+                <div class="select">
+                    <select id="exampleSelector" onchange="loadExample()">
+                        <option value="">Select an example</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <section class="section">
+            <div class="container">
+                <h1 class="title">JSON-RPC Interface</h1>
+                <div class="field">
+                    <label class="label">Method</label>
+                    <div class="control">
+                        <input class="input" type="text" id="method" placeholder="Enter method name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Parameters</label>
+                    <div class="control">
+                        <textarea class="textarea" id="params" placeholder="Enter parameters as JSON"></textarea>
+                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-primary" onclick="sendRpcRequest()">Send Request</button>
+                </div>
+                <div class="field">
+                    <label class="label">Response</label>
+                    <div class="control">
+                        <pre><code class="language-json" id="response"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

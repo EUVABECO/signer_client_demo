@@ -1,0 +1,60 @@
+{
+  "from_hcert": {
+    "method": "from_hcert",
+    "params": {
+      "hcert": "6BF/80I20FFWJWG.FKY*4DP0FC8ZFFF$DKWEOED1Y8VS8+A8WW68ZKO/EZKEZ96446C56..DV%DLPCG/DOUCX C:.DI3D8WEHZ9NPC: CJPCT3E5JDMA7Q477463W5-A66:E27B0KKLCI-0843I+52C K.2O6A0VMEE$99A958CK91U4VQ:0.CH+8O9ROY4E%D8:5O1Q9K%FMKL C30T8N.B5+MP8EKISV-EDF0WTKK*7"
+    }
+  },
+  "full_loop": {
+    "method": "pipeline",
+    "params": {
+      "pipeline": [
+        {
+          "method": "to_cwt",
+          "param": "hcert_data"
+        },
+        {
+          "method": "to_zip",
+          "param": "binary_data"
+        },
+        {
+          "method": "to_base_45",
+          "param": "binary_data"
+        },
+        {
+          "method": "from_hcert",
+          "param": "hcert"
+        }
+      ],
+      "params": {
+        "ver": "1.0.0",
+        "nam": {
+          "fnt": "Jean",
+          "gnt": "Michel"
+        },
+        "dob": "1978-01-01",
+        "v": []
+      }
+    }
+  },
+  "to_base_45": {
+    "method": "to_base_45",
+    "params":{
+      "data": "coucou"
+    }
+},
+"to_cwt": {
+  "method": "to_cwt",
+  "params":{
+    "hcert_data": {
+      "ver": "1.0.0",
+      "nam": {
+        "fnt": "Jean",
+        "gnt": "Michel"
+      },
+      "dob": "1978-01-01",
+      "v": []
+    }
+  }
+}
+}
